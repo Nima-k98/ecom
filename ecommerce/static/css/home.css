@@ -1,0 +1,127 @@
+.products-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .card {
+        width: 18rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        margin-bottom: 1rem; /* Space below each card */
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .price {
+        color: #007bff;
+    }
+
+    .button {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+    }
+    .button:hover {
+    color: white;
+    text-decoration: none;
+   }
+    .card-img-top {
+        height: 200px;
+        object-fit: contain;
+        padding: 0.5rem;
+       }
+    .new-products-section {
+        padding: 2rem 0;
+        background-color: #f5f5f5;
+    }
+
+    .new-products-title {
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+    .custom-message-container {
+    margin: 20px 0;
+     }
+
+     .custom-message {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+    color: #fff;
+    animation: fadeOut 5s ease-out forwards;
+    }
+    @keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.custom-message.success {
+    background-color: #28a745;
+}
+
+.custom-message.error {
+    background-color: #dc3545;
+}
+
+.custom-message.warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.custom-message.info {
+    background-color: #17a2b8;
+}
+
+
+.fixed-size-image {
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.product-details {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.product-details h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.product-details p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.product-details .btn {
+    margin-top: 10px;
+}
+

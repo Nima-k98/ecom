@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #101010;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false" style="color: white; border: 2px solid transparent; border-radius: 4px; transition: border 0.3s;" onmouseover="this.style.borderColor='white'" onmouseout="this.style.borderColor='transparent'" onfocus="this.style.borderColor='white'"
+           onblur="this.style.borderColor='transparent'">
+          All
+        </a>
+         <div class="dropdown-menu">
+          {% for category in categories %}
+            <a class="dropdown-item" href="#">{{ category.name }}</a>
+          {% endfor %}
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Others</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white; border: 2px solid transparent; border-radius: 4px; transition: border 0.3s;" onmouseover="this.style.borderColor='white'" onmouseout="this.style.borderColor='transparent'" onfocus="this.style.borderColor='white'" onblur="this.style.borderColor='transparent'">Best Sellers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white; border: 2px solid transparent; border-radius: 4px; transition: border 0.3s;" onmouseover="this.style.borderColor='white'" onmouseout="this.style.borderColor='transparent'" onfocus="this.style.borderColor='white'" onblur="this.style.borderColor='transparent'">Today Deals</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white; border: 2px solid transparent; border-radius: 4px; transition: border 0.3s;" onmouseover="this.style.borderColor='white'" onmouseout="this.style.borderColor='transparent'" onfocus="this.style.borderColor='white'" onblur="this.style.borderColor='transparent'">Fashion</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white; border: 2px solid transparent; border-radius: 4px; transition: border 0.3s;" onmouseover="this.style.borderColor='white'" onmouseout="this.style.borderColor='transparent'" onfocus="this.style.borderColor='white'" onblur="this.style.borderColor='transparent'">Electronics</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white; border: 2px solid transparent; border-radius: 4px; transition: border 0.3s;" onmouseover="this.style.borderColor='white'" onmouseout="this.style.borderColor='transparent'" onfocus="this.style.borderColor='white'" onblur="this.style.borderColor='transparent'">Support</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white; border: 2px solid transparent; border-radius: 4px; transition: border 0.3s;" onmouseover="this.style.borderColor='white'" onmouseout="this.style.borderColor='transparent'" onfocus="this.style.borderColor='white'" onblur="this.style.borderColor='transparent'">About Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>

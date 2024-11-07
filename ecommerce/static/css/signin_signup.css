@@ -1,0 +1,213 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.header img {
+    height: 45px;
+    width: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.header h2 {
+    margin-left: 10px;
+    font-size: 1.3rem;
+    color: #333;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 1.4rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    margin: 1rem auto; /* Center the login container */
+}
+
+label {
+    text-align: left;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    width: 70%;
+    padding: 0.5rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 1rem auto;
+    display: block;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+.help-link {
+    font-size: 0.9rem;
+    color: #0066c0;
+    text-decoration: none;
+    margin-bottom: 0.3rem;
+    display: inline-block;
+}
+
+.help-link:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    border-bottom: 1px solid black;
+    width: 30%;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.divider-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem 0;
+}
+
+.sign-row {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-bottom: 1rem 0;
+}
+
+.new-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    text-align: center;
+}
+
+.new-account h5 {
+    margin-right: 10px;
+}
+
+.new-account a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: black;
+    border: 1px solid black; /* Add black border to the link */
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.new-account a:hover {
+    text-decoration: underline;
+}
+
+.terms {
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 1rem;
+}
+
+/* Styles for name fields in the same row */
+.name-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.name-field {
+    flex: 1;
+    margin-right: 0.5rem; /* Adjust as needed */
+}
+
+.name-field:last-child {
+    margin-right: 0;
+}
+
+/* Styles for password fields in the same row */
+.password-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.password-field {
+    flex: 1;
+    margin-right: 0.5rem; /* Adjust as needed */
+}
+
+.password-field:last-child {
+    margin-right: 0;
+}
+ .custom-message-container {
+    margin: 20px 0;
+}
+
+.custom-message {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+    color: #fff;
+    animation: fadeOut 5s ease-out forwards;
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.custom-message.success {
+    background-color: #28a745;
+}
+
+.custom-message.error {
+    background-color: #dc3545;
+}
+
+.custom-message.warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.custom-message.info {
+    background-color: #17a2b8;
+}

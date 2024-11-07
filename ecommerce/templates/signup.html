@@ -1,0 +1,82 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/signin_signup.css' %}">
+    <script>
+        function validatePasswords() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("con_pass").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="{% static 'images/shop_logo.png' %}" alt="logoimage">
+        <h2>Shopify</h2>
+    </div>
+   <br>
+{% if messages %}
+    <div class="custom-message-container">
+        {% for message in messages %}
+            <div class="custom-message {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+      <br>
+{% endif %}
+    <div class="login-container">
+        <h2>Sign Up</h2>
+        <form method="post" action="/signup/" onsubmit="return validatePasswords()">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <div class="password-container">
+                <div class="password-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="password" required>
+                </div>
+                <div class="password-field">
+                    <label for="con_pass">Confirm password</label>
+                    <input type="password" id="con_pass" name="con_pass" placeholder="Confirm password" required>
+                </div>
+            </div>
+
+            <div class="name-container">
+                <div class="name-field">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname" placeholder="First Name" required>
+                </div>
+                <div class="name-field">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+                </div>
+            </div>
+
+            <label for="email">Email Id</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email Address" required>
+
+            <button type="submit">Sign up</button>
+        </form>
+        <a href="#" class="help-link">Need help?</a>
+        <div class="sign-row">
+            <h5>Already have an account?</h5>
+            <a href="{% url 'signin' %}">Sign in</a>
+        </div>
+        <div class="terms">
+            <p>By continuing, you agree to Shopify's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet"  href="{% static 'css/home.css' %}">
+
+<br>
+  {% if user.is_authenticated %}
+    <b>Welcome {{ fname }} {{ lname }}</b>
+    <br>
+{% endif %}
+<div>
+    <img src="{% static 'images/shopping.jpg' %}" alt="wallpaper" style="height:400px; width:100%;">
+</div>
+<br>
+<div class="new-products-section">
+    <h3 class="new-products-title">Products</h3>
+</div>
+<div class="row">
+    <div class="col-10"></div>
+    <div class="col-2"><a href="{% url 'add_product' %}" class="btn btn-success">Add new product</a></div>
+</div>
+<br>
+{% if messages %}
+    <div class="custom-message-container">
+        {% for message in messages %}
+            <div class="custom-message {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+<br>
+{% if products %}
+    <div class="products-container">
+        {% for product in products %}
+      <div class="card" style="width: 18rem;">
+            <img src="{{product.image.url}}" class="card-img-top" alt="not found">
+                         <div class="card-body">
+                             <h5 class="card-title">{{product.name}}</h5>
+                             <h5 class="card-title"> Price: Rs.{{ product.price}}</h5>
+                             <p class="card-text">{{product.desc|slice:"0:73"}}...</p>
+                             <a href="{% url 'edit_product' product.id %}" class="button">Edit Product</a>
+                             <a href="{% url 'delete_product' product.id %}" class="btn btn-danger">Delete</a>
+                         </div>
+                     </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No products available.</p>
+{% endif %}
+{% endblock %}

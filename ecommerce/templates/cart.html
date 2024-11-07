@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+<br>
+{% if cart_items %}
+    <h2>Your Cart</h2>
+   <div class="custom-message-container">
+        {% for message in messages %}
+            <div class="custom-message {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="cart-container">
+        <div class="cart-items-container">
+            {% for item in cart_items %}
+                <div class="cart-item">
+                    <div class="item-image">
+                        <img src="{{ item.product.image.url }}" alt="Not Found" class="item-image-top">
+                    </div>
+                    <div class="item-info">
+                        <div class="item-details">
+                            <span class="item-name">{{ item.product.name }}</span>
+                            <br>
+                            <span class="item-quantity">Qty: {{ item.quantity }}</span>
+                            <br>
+                            <span class="item-price">Price: ₹{{ item.product.price }}</span>
+                            <br>
+                            <span class="item-total">Total: ₹{{ item.total }}</span>
+                        </div>
+                    </div>
+                    <a href="{% url 'remove_from_cart' item.product.id %}" class="remove-link">Remove</a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="cart-summary">
+            <div class="cart-total">
+                <h3>Total: ₹{{ total_price }}</h3>
+                <p>Shipping: ₹{{ shipping_cost }}</p>
+                <p>Tax: ₹{{ tax }}</p>
+                <a href="" class="proceed-button">Proceed to Buy</a>
+            </div>
+        </div>
+    </div>
+    <hr>
+{% else %}
+    <div class="empty-cart-message">
+        <h3>Your cart is empty.</h3>
+        <p>Check your Saved for later items below or <a href="{% url 'userhome' %}">continue shopping</a>.</p>
+    </div>
+{% endif %}
+{% endblock %}
